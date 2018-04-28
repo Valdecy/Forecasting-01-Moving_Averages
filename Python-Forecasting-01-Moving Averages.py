@@ -7,7 +7,7 @@
 # Lesson: Moving Averages
 
 # Citation: 
-# PEREIRA, V. (2018). Project: Association Rules, File: Python-Forecasting-01-Moving Averages.py, GitHub repository: <https://github.com/Valdecy/Forecasting-01-Moving Averages>
+# PEREIRA, V. (2018). Project: Forecasting-01-Moving_Averages, File: Python-Forecasting-01-Moving Averages.py, GitHub repository: <https://github.com/Valdecy/Forecasting-01-Moving Averages>
 
 ############################################################################
 
@@ -197,13 +197,15 @@ def exp_moving_average(timeseries, alpha = 0.5, graph = True, horizon = 0, optim
     ############### End of Function ##############
 
 ######################## Part 2 - Usage ####################################
-    
+# Load Dataset   
 df = pd.read_csv('Python-Forecasting-01-Dataset.csv', sep = ',')
 
+# Transforming the Dataset to a Time Series
 X = df.iloc[:,:]
-X = X.set_index(pd.DatetimeIndex(df.iloc[:,0])) # First column as row names
+X = X.set_index(pd.DatetimeIndex(df.iloc[:,0]))
 X = X.iloc[:,1]
 
+# Calling Functions
 weighted_moving_average(X, n = [0.2, 0.3, 0.5], graph = True, horizon = 0)
 moving_average(X, n = 24, graph = True, horizon = 50)
 exp_moving_average(X, alpha = 0.7, graph = True, horizon = 0, optimize = True)
