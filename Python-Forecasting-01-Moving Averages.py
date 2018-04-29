@@ -207,7 +207,7 @@ X = X.iloc[:,1]
 
 # Calling Functions
 weighted_moving_average(X, n = [0.2, 0.3, 0.5], graph = True, horizon = 0)
-moving_average(X, n = 24, graph = True, horizon = 50)
-exp_moving_average(X, alpha = 0.7, graph = True, horizon = 0, optimize = True)
+moving_average(X, n = 12, graph = True, horizon = 50)
+exp_moving_average(X, alpha = 0.7, graph = True, horizon = 0, optimize = False)
 
 ########################## End of Code #####################################
