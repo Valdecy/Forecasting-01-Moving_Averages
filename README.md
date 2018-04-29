@@ -32,4 +32,4 @@ C) Exponential Moving Average
 
 * horizon = Calculates the prediction h steps ahead. The default value is 0.
 
-* optimize = If True then best "alpha" (exponential smoothing parameter) is calculated by brute force. The default value is False.
+* optimize = If True then the best "alpha" (exponential smoothing parameter) is calculated by brute force. The default value is False.
