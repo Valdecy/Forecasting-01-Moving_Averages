@@ -22,18 +22,18 @@ from math import sqrt
 ################     Part 1 - Moving Averages    #############################
 
 # Function: WMA
-def weighted_moving_average(timeseries, n = [0.2, 0.3, 0.5], graph = True, horizon = 0):
+def weighted_moving_average(timeseries, w = [0.2, 0.3, 0.5], graph = True, horizon = 0):
     
     name = 'WMA'
     timeseries = pd.DataFrame(timeseries.values, index = timeseries.index, columns = [timeseries.name])/1.0
     wma = pd.DataFrame(np.nan, index = timeseries.index, columns = [name])
-    center = int(len(n)/2)
+    center = int(len(w)/2)
     start  = 0
     
     for i in range(center, len(timeseries) - center):
         wma.iloc[i, 0] = 0
-        for j in range(0, len(n)):
-            wma.iloc[i, 0]  = float(wma.iloc[i, 0] + timeseries.iloc[start + j,:]*n[j])
+        for j in range(0, len(w)):
+            wma.iloc[i, 0]  = float(wma.iloc[i, 0] + timeseries.iloc[start + j,:]*w[j])
         start  = start  + 1
     
     last = wma.iloc[(start - 1),0]
